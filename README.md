@@ -7,4 +7,5 @@ hello world
 
 goodbye
 
-this is a change on my MASTER branch
+
+this is a change on my MASTER branch - which has now been MERGED.
