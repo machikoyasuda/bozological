@@ -1,17 +1,16 @@
 <div class="row">
-    <div class="large-2 columns">
-        <h3>Lost password?</h3>
-        <p>Lost your password? Leave the password field blank and click log in to receive an e-mail with a code to reset your password.</p>
-    </div>
+  <div class="large-2 columns">
+    <h3>Lost password?</h3>
+    <p>Lost your password? Leave the password field blank and click log in to receive an e-mail with a code to reset your password.</p>
+  </div>
 
-    <div class="large-8 columns">
+  <div class="large-8 columns">
     <h1>Log in</h1>
-        <form action="/login" method="POST">
-        <input type="text" id ="email" name="email" placeholder="E-mail address">
-
-        <input type="password" id ="password" name="password" placeholder="Password">
-
-        <input type="submit" value="Log in" class="small button">
-        </form>
-    </div>
+    <form action="/login" method="POST">
+    <input type="text" id ="email" name="email" placeholder="E-mail address">
+    <input type="password" id ="password" name="password" placeholder="Password">
+    <input type="submit" id="view-password" value="View password" class="small button alert">
+    <input type="submit" id="log-in" value="Log in" class="small button">
+    </form>
+  </div>
 </div>
