@@ -14,6 +14,8 @@ group :development, :test do
   gem "better_errors"
   gem "binding_of_caller"
   gem 'jasmine'
+  gem 'fabrication'
+  gem 'ffaker'
 end
 
 gem 'sass-rails', '~> 4.0.0'
@@ -40,7 +42,7 @@ group :doc do
 end
 
 # Use ActiveModel has_secure_password
-gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'bcrypt-ruby', '~> 3.0.0', require: 'bcrypt'
 
 # Use unicorn as the app server
 # gem 'unicorn'
