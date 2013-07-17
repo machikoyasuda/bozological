@@ -20,7 +20,3 @@ describe User do
     expect(unauthuser).to be_nil
   end
 end
-
-# Instead of creating a new user every time,
-# We will create test users from the start
-# using Ffaker and Fabrication
