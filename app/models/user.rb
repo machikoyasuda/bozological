@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   attr_accessor :password, :password_confirmation
 
   validates :password, confirmation: true
-  validates :password_confirmation, presence: true
+  validates :password_confirmation, presence: true, unless: "password.nil?"
 
   def self.authenticate(email, password)
     user = User.find_by(email: email)
@@ -16,13 +16,14 @@ class User < ActiveRecord::Base
       end
     end
     nil
-
   end
 
   private
 
   def encrypt_password
-    self.salt = BCrypt::Engine.generate_salt
-    self.fish = BCrypt::Engine.hash_secret(password, self.salt)
+    unless password.blank?
+      self.salt = BCrypt::Engine.generate_salt
+      self.fish = BCrypt::Engine.hash_secret(password, self.salt)
+    end
   end
 end
