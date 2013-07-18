@@ -1,2 +1,8 @@
 <h1>Users#edit</h1>
 <p>Find me in app/views/users/edit.html.erb</p>
+<div class="row">
+  <div class="large-4 columns">
+    <h1>Edit user #<%= @user.id %></h1>
+    <%= render partial: "form" %>
+  </div>
+</div>

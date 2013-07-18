@@ -1,0 +1,9 @@
+<%= form_for @user, html: { autocomplete: :off } do |f| %>
+  <p>
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
