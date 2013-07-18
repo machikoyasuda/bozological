@@ -1,10 +1,4 @@
-<h1>The users: Site#index</h1>
-
-<div class="three columns">
-  <p>
-   <%= link_to "Register", new_user_path %>
-  </p>
-</div>
+<h1>Welcome, today is <%= Time.now.strftime('%A') %>.</h1>
 
 <div class="nine columns">
   <table class="table">
@@ -27,6 +21,6 @@
       <% end %>
       </tbody>
   </table>
+  <%= link_to "Register now", new_user_path, :class =>"button round" %>
 </div>
-<!-- Today is <%= Time.now.strftime('%A') %>.
- -->
+
