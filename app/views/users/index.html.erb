@@ -1,14 +1,29 @@
 <h1>The users: Site#index</h1>
 
-<% @users.each do |user| %>
-<!-- for each user,  -->
-  <ul>
-    <li>E-mail: <%= link_to user.email, user %></li>
-    <li>Created at: <%= user.created_at %></li>
+<div class="three columns">
+  <p>
+   Text
+  </p>
+</div>
 
-  </ul>
-<% end %>
-
-Today is <%= Time.now.strftime('%A') %>.
-
+<div class="nine columns">
+  <table class="table">
+      <thead><tr><th>E-mail:</th><th>Created</th><th>ID</th><th>Delete</th></tr></thead>
+      <tbody>
+      <% @users.each do |user| %>
+      <!-- for each user, create table row and cell -->
+        <tr>
+          <td><%= link_to user.email, user %></td>
+          <td><%= time_ago_in_words(user.created_at) %></td>
+          <td><%= user.id %></td>
+          <td>
+            <%= link_to "delete", user, method: :delete, confirm: "Are you sure?" %>
+          </td>
+        </tr>
+      <% end %>
+      </tbody>
+  </table>
+</div>
+<!-- Today is <%= Time.now.strftime('%A') %>.
+ -->
 <p>Find me in app/views/site/index.html.erb</p>

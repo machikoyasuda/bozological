@@ -9,13 +9,20 @@ class UsersController < ApplicationController
   end
 
   def new
+    @user = User.new
   end
 
   def edit
   end
 
   def create
-    redirect_to users_path, status:303
+    User = user.create(params[:user])
+
+    if @user
+      redirect_to users_path, status:303
+    else
+      render :new
+    end
   end
 
   def update
@@ -23,6 +30,8 @@ class UsersController < ApplicationController
   end
 
   def destroy
+    user = User.find params[:id]
+    user.destroy
     redirect_to users_path, status:303
   end
 
