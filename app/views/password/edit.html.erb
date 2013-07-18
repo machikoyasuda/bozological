@@ -1,0 +1,29 @@
+<div class="row">
+  <div class="large-10 columns large-offset-2">
+    <h1>Set Your Password</h1>
+  </div>
+</div>
+<div class="row">
+  <div class="large-3 columns large-offset-2">
+    <%= form_for @user, html: { autocomplete: :off } do |f| %>
+      <p>
+        <%= f.label :password %>
+        <%= f.text_field :password %>
+      </p>
+      <p>
+        <%= f.label :password_confirmation %>
+        <%= f.text_field :password_confirmation %>
+      </p>
+      <p>
+        <%= f.submit "Save password", class: "button alert" %>
+      </p>
+    <% end %>
+  </div>
+  <div class="large-7 columns">
+    <div class="progress large-6 strength-meter">
+      <span class="meter w-0" style="width: 0%"></span>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript" src="/js/zxcvbn-async.js"></script>
