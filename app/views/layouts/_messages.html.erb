@@ -1,0 +1,19 @@
+<%#
+  Loops through the flash hash and adds a noty script for each
+  flash message (converts notice to success and everything else
+  to error)
+%>
+<% flash.each do |name, msg| %>
+  <%# Add flash only if the message is a string %>
+  <% if msg.is_a?(String) %>
+    <script type="text/javascript">
+      $(function() {
+        noty({
+          type: '<%= name == :notice ? "success" : "error" %>',
+          text: '<%= msg %>',
+          timeout: <%= name == :notice ? 4000 : 30000 %>
+        });
+      });
+    </script>
+  <% end %>
+<% end %>

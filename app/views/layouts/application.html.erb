@@ -24,7 +24,8 @@
 
     <%= yield %>
 
-
     <%= javascript_include_tag "application" %>
+    <%# insert flash message partial below the noty script %>
+    <%= render partial: "layouts/messages" %>
   </body>
 </html>

@@ -2,7 +2,7 @@
 
 <div class="nine columns">
   <table class="table">
-      <thead><tr><th>E-mail:</th><th>Created</th><th>Updated</th><th>ID</th><th>Delete</th><th>Edit</th></tr></thead>
+      <thead><tr><th>E-mail:</th><th>Created</th><th>Updated</th><th>ID</th><th>Code</th><th>Delete</th><th>Edit</th></tr></thead>
       <tbody>
       <% @users.each do |user| %>
       <!-- for each user, create table row and cell -->
@@ -11,6 +11,7 @@
           <td><%= time_ago_in_words(user.created_at) %></td>
           <td><%= time_ago_in_words(user.updated_at) %></td>
           <td><%= user.id %></td>
+          <td><%= user.code %></td>
           <td>
             <%= link_to "delete", user, method: :delete, confirm: "Are you sure?" %>
           </td>
