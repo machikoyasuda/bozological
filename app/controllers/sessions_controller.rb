@@ -10,11 +10,14 @@ class SessionsController < ApplicationController
 
       if user
           user.code = SecureRandom.urlsafe_base64 # set user.code
-          puts user
-          puts user.code
+          # puts user
+          # puts user.code
           user.expires_at = Time.now + 4.hours    # set expiration date
-          puts user.expires_at
+          # puts user.expires_at
           user.save                               # save user
+
+          #send password reset e-mail with code
+          PasswordMailer.reset_email(user).deliver
       end
 
       render :new                       # go to new session log_in page
@@ -23,7 +26,7 @@ class SessionsController < ApplicationController
                                         # authenticate User's email, password
       if user
         session[:user_id] = user.id     # add user.id to sessions hash
-        redirect_to root_url
+        redirect_to root_url, notice: "You've successfully logged in." # flash alert to noty
       else
         render :new
       end
